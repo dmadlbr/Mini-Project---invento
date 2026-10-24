@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <main class="layout">
+
+    <section class="sidebar">
+        <div class="brand">
+            <img src="./assets/logo.png" class="h-14">
+            <h1 class="text-white">invento<span class="text-orange-300">.</span></h1>
+        </div>
+
+    
+        <nav >
+            <div class="sidelist">
+                <h3 class="tracking-widest text-[10px] text-[rgb(208,218,215)] ms-5">WORKSPACE</h3>
+                <button>
+                    <i class="fa-solid fa-table-cells-large"></i>
+                   <a href="./dashboard.html">Dashboard</a>  
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-box"></i>
+                    <a href="product.html">Products</a> 
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                    <a href="add.html">Add Product</a> 
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <a href="lowStock.html">Low Stock</a> 
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-gear"></i>
+                    <a href="settings.html">Settings</a>
+                </button>
+            </div>
+        </nav>
+    <div class="helpBox">
+        <h4>Need a hand?</h4>
+        <p>Your insight, sorted. Take a breath.</p>
+    </div>
+
+        <button class="logout" id="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+
+    </section>
+
+    <section class="dashboard">
+
+
+        <div class="ps-15 pt-5">
+
+            <h4 class="text-sm text-gray-400 font-semibold">
+                LET'S KEEP INVENTORY ON TRACK
+            </h4>
+
+            <div class="flex justify-between items-center">
+
+                <h3 class="font-bold text-[rgb(35,81,64)] text-3xl tracking-widest">
+                    Welcome Back! Here's your inventory.
+                </h3>
+
+                <div class="flex gap-5 items-center pe-10">
+
+                    <button type="button" id="filterButton" class="bg-white w-48 p-3 text-[rgb(35,81,64)] font-semibold rounded-2xl hover:-translate-y-1  transition duration-300"><i class="fa-solid fa-filter"></i> Filter Low Stock </button>
+
+                    <button type="button" class="bg-[rgb(35,81,64)] font-semibold w-48 p-3 text-white rounded-2xl hover:-translate-y-1  transition duration-300"><a href="add.html"><i class="fa-solid fa-plus "></i> Add New Product</a> </button>
+
+
+                </div>
+
+            </div>
+
+            <p class="text-[rgb(95,108,104)] ps-1 ">
+                Keep an eye on your products and stay ahead of stock changes.
+            </p>
+
+        </div>    
+
+    <div class="qty">
+        <div id="totPdts">
+            <i class="fa-solid fa-box bg-[rgb(203,239,203)] text-green-800"></i>    
+            <h5 class="text-[rgb(95,108,104)] text-[16px] font-semibold ">Total Products</h5>
+            <p class="text-[rgb(154,153,150)] text-[12px] font-semibold"> All products in your inventory</p>
+            <p id="totalProductNumber"></p>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-warehouse bg-[rgb(243,225,213)] text-[rgb(138,69,39)]"></i>
+            <h5 class="text-[rgb(95,108,104)] text-[16px] font-semibold ">Total Stock</h5>
+            <p class="text-[rgb(154,153,150)] text-[12px] font-semibold">Units available across all products</p>
+            <p id="totalStockNumber"></p>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-triangle-exclamation bg-[rgb(255,237,213)] text-[rgb(253,186,116)]"></i>
+            <h5 class="text-[rgb(95,108,104)] text-[16px] font-semibold ">Low Stock</h5>
+            <p class="text-[rgb(154,153,150)] text-[12px] font-semibold">Products below the ideal stock level</p>
+            <p id="lowStockNumber"></p>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-dolly text-[rgb(233,91,91)] bg-[rgb(242,191,191)]"></i>
+            <h5 class="text-[rgb(95,108,104)] text-[16px] font-semibold ">Out Of Stock</h5>
+            <p class="text-[rgb(154,153,150)] text-[12px] font-semibold" >Products currently unavailable</p>
+            <p id="outStockNumber"></p>
+        </div>
+
+    </div>
+
+    <!-- recently and low -->
+    <div class="flex justify-between gap-12 px-10 ">
+        <div class="box  w-100 p-6 bg-white rounded-2xl border border-[rgb(226,230,221)] shadow-sm ms-5">
+
+        
+            <h5 class="font-semibold text-[rgb(95,108,104)] tracking-widest text-[12px]">
+                LATEST UPDATES
+            </h5>
+
+            <div class="flex justify-between items-center">
+
+                <h4 class="text-2xl text-[rgb(35,81,64)] font-bold ">
+                    Recently added
+                </h4>
+
+                <button class="text-[rgb(35,81,64)] font-semibold text-[14px]">
+                    <a href="product.html">View full inventory <i class="fa-solid fa-arrow-right"></i></a>
+                </button>
+
+            </div>
+                <div id="recentList"></div>
+        </div>
+
+        <div class="box w-100 p-8 bg-white rounded-2xl border border-[rgb(226,230,221)] shadow-sm flex flex-col">
+
+            <h5 class="font-semibold text-[rgb(232,202,148)] tracking-widest text-[12px]">WORTH A LOOK</h5>
+            <h4 class="flex items-center justify-between gap-2 text-2xl font-bold text-[rgb(35,81,64)]">Needs your attention<span class="flex items-center justify-center w-10 h-10 rounded-xl bg-[rgb(248,229,190)]"><i class="fa-solid fa-people-carry-box  text-[rgb(161,108,34)] "></i></span></h4>
+            <p class="text-[rgb(95,108,104)] font-semibold text-[14px] ps-1">Quick heads-up on low stock.. </p>
+            <div id="lowList"  class="mt-4 flex-1"></div>
+            <div class="lowPage flex justify-end items-center gap-6 mt-4 text-xs">
+                <button type="button" id="lowPrev"> < Previous</button>
+                <span id="lowPgNo">1</span>
+                <button type="button" id="lowNext">Next > </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    </main>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="dashboard.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

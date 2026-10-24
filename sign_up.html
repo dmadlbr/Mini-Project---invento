@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <header>
+        <div class="head pt-5">
+            <div class="brand">
+            <img src="./assets/logo.png" class="h-14">
+            <h1 class="text-green-700">invento.</h1>
+            </div>
+            <ul class="navs">
+                <li><a href="./land.html">Home</a></li>
+                <li><a href="./land.html#about">About Us</a></li>
+                <li><a href="./land.html#foot"> Contact</a></li>
+                <button class="border bg-green-700 text-white font-semibold hover:scale-105 transition duration-300 p-2 rounded-lg"><a href="./sign_up.html">Get Started</a></button>
+            </ul>
+        </div>     
+    </header>
+
+    <section>
+        <div class="flex justify-center items-center min-h-[calc(100vh-70px)]">
+                <div class="grid grid-cols-2 gap-24 items-center justify-center">
+
+                <div class="signinBox">
+                    <img src="./assets/logo.png" alt="" class="h-10 bg-[rgb(222,185,123)] rounded-lg">
+                    <h2 class="text-[rgb(169,164,156)] font-semibold text-[12px] my-4 ">YOUR SHOP, A LITTLE MORE ORGANIZED</h2>
+                    <h3 class="text-5xl leading-tight font-bold w-100 text-white">Take stock.<span class="block text-[rgba(197,150,69,1)]">Feel in control.</span></h3>
+                    <h4 class="text-[15px] leading-6 w-95 mt-5 text-[rgb(169,164,156)]">Everything you need to keep your shelves straight and your day moving.</h4>
+                    <div class="flex gap-2 items-center mt-5 ">
+                        <i class="fa-solid fa-shield-halved text-[rgb(222,185,123)] "></i>
+                        <h5 class="text-[rgb(171,156,132)]">Your inventory is saved on this device.</h5>
+                    </div>
+                </div>
+
+        <div class="flex justify-center items-center" id="signupForm">
+        
+            <form class="flex flex-col p-10 gap-2 bg-white rounded-[25px] w-[500px] h-[450px] mb-20" id="form">
+                <h3 class=" text-[12px] font-semibold text-[rgb(169,164,156)]">GET YOUR SHOP SET UP</h3>
+                <h1 class="text-4xl text-[rgba(35,81,64)] font-bold">Create your workspace</h1>
+                <h2 class="text-[12px] text-[rgb(169,164,156)] ">A few details and you can start keeping track.</h2>
+                <label for="name" class="text-[12px] text-gray-500">Full Name</label>
+                <input type="text" id="name" placeholder="Eg:Treesa Maria" class="p-2 w-full border border-[rgb(222,185,123)] rounded-[10px] placeholder:text-[12px]" required>
+                <label for="email" class="text-[12px] text-gray-500">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" class="p-2 w-full border  border-[rgb(222,185,123)] rounded-[10px] placeholder:text-[12px]" required>
+                <label for="password" class="text-[12px] text-gray-500">Password</label>
+                <input type="password" id="password" placeholder="Atleast 6 characters" class="p-2 w-full border  border-[rgb(222,185,123)] rounded-[10px] placeholder:text-[12px]" minlength="6" required>
+                <label for="confirmPassword" class="text-[12px] text-gray-500">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter your password" class="p-2 w-full  border border-[rgb(222,185,123)] rounded-[10px] placeholder:text-[12px]" minlength="6" required>
+              
+                <div class="flex flex-col items-center gap-2">
+                    <button type="submit" class="border border-green-500 w-50 p-2 text-white bg-[rgba(35,81,64)] rounded mt-5 mx-35 hover:bg-green-600 hover:translate-y-1 transition duration-300" id="acc">Create Account</button>
+                
+                        <div class="text-center">
+                        <p class=" text-sm  ms-10 text-[rgb(169,164,156)]">Already have an account?</p>
+                        <a href="./sign_in.html" class="text-green-700 text-sm">Sign In</a>
+                        </div>
+               
+                </div>   
+
+            </form>
+        </div>
+    
+ </section>
+ 
+    <script src="auth.js"></script>
+</body>
+</html>

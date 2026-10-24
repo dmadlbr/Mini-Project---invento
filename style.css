@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    color: rgba(31, 41, 55, 1); 
+}
+
+.login{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    height: 450px;
+    width: 500px;
+    transition: 0.3s;
+    border-radius: 25px;
+    padding: 40px;
+    background-color: white;
+}
+
+.login:hover{
+    transform: translate(-10px);
+    cursor: pointer;
+}
+
+#form:hover{
+    transform: translate(-10px);
+    cursor: pointer;
+}
+.signinBox{
+    background-image: url(./assets/signinbg.png);
+    width: 500px;
+    height: 450px;
+    border-radius: 25px;
+    padding: 50px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.head{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-inline: 40px; 
+    height: 70px;
+    margin-top: 20px;
+    /* ith added whilw dash */
+}
+
+.brand h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    
+   
+}
+.navs{
+    display:flex;
+    gap: 60px;
+    align-items: center;
+    list-style: none;
+   
+}
+
+.cards{
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    
+}
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-top:50px;
+    padding-inline:120px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.open,.tag{
+    background-color: rgb(203,239,203);
+    height:30px; 
+    width: 30px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: green;
+    border-radius: 10px;
+}
+
+.slider{
+    background-color:rgb(255, 237, 213);
+    height:30px; 
+    width: 30px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(253, 186, 116);
+    border-radius: 10px;
+}
+
+.cards > div{
+    border-block: 1px solid  rgb(225,223,215);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    
+}
+
+.benefits{
+    display: grid;
+    grid-template-columns: repeat(2,450px);
+    gap: 100px;
+    justify-content: center;
+    padding: 50px;
+}
+
+.benefit1,.benefit2,.benefit3,.benefit4{
+    height:180px;
+    width:450px;
+    border-radius: 40px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb(222,185,123);
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.08);
+    padding: 20px;
+    transition: 300ms;
+    
+}
+
+
+.benefit1:hover,.benefit2:hover,.benefit3:hover,.benefit4:hover{
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.15); 
+    border-color: rgba(234, 179, 8, 0.5);box-shadow: 3px 2px 5px green;
+    scale: 1.02;
+}
+
+section { 
+    border-color: rgba(22, 101, 52, 0.12);
+}
+
