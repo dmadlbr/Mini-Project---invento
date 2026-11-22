@@ -1,0 +1,258 @@
+/* DASHBOARD RESPONSIVE */
+
+/* Hamburger button - hidden on desktop */
+
+.menuBtn {
+    display: none;
+    background: rgb(35, 81, 64);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Tablet and mobile */
+
+@media (max-width: 991px) {
+
+    /* Main layout */
+
+    .layout {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Hamburger */
+
+.menuBtn {
+    display: block;
+    position: static;
+    flex-shrink: 0;
+    z-index: 1004;
+}
+    /* Sidebar */
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        max-width: 85vw;
+        height: 100vh;
+        z-index: 1003;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Overlay */
+
+    #sidebarOverlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1002;
+    }
+
+    #sidebarOverlay.active {
+        display: block;
+    }
+
+    /* Dashboard main section */
+
+.dashboard {
+    width: 100% !important;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 0 20px;
+    box-sizing: border-box;
+}
+
+    /* Header */
+
+    .dashboard > div:first-of-type {
+        padding: 10px 20px;
+    }
+
+    .dashboard > div:first-of-type h3 {
+        font-size: 24px;
+        letter-spacing: normal;
+    }
+
+    /* Header buttons */
+
+    .dashboard > div:first-of-type .flex.gap-5 {
+        gap: 12px;
+        padding-right: 0;
+    }
+
+    .dashboard > div:first-of-type .flex.gap-5 button {
+        width: auto;
+        min-width: 0;
+        padding: 10px;
+    }
+
+    /* Description */
+
+    .dashboard > div:first-of-type > p {
+        padding-left: 0;
+        margin-top: 8px;
+    }
+
+    /* Quantity cards */
+
+    .qty {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .qty > div {
+        min-width: 0;
+    }
+
+    /* Recently added and low stock */
+
+    .dashboard > .flex.justify-between.gap-12 {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    /* Both boxes */
+
+.box {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 450px;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+}
+
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+    /* Sidebar */
+
+    .sidebar {
+        width: 260px;
+    }
+
+    /* Dashboard header */
+
+    .dashboard {
+        padding-top: 55px;
+    }
+
+    .dashboard > div:first-of-type {
+        padding: 10px 15px;
+    }
+
+    .dashboard > div:first-of-type h3 {
+        font-size: 19px;
+    }
+
+    .dashboard > div:first-of-type h4 {
+        font-size: 11px;
+    }
+
+    /* Header arrangement */
+
+    .dashboard > div:first-of-type > div.flex.justify-between {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* Header buttons */
+
+    .dashboard > div:first-of-type .flex.gap-5 {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .dashboard > div:first-of-type .flex.gap-5 button {
+        width: 100%;
+    }
+
+    /* Quantity cards */
+
+    .qty {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    /* Recent and low stock */
+
+    .dashboard > .flex.justify-between.gap-12 {
+        padding: 12px;
+        gap: 15px;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    /* Card headings */
+
+    .box h4 {
+        font-size: 19px;
+    }
+
+    /* Pagination */
+
+    .lowPage {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ============================= */
+/* EXTRA SMALL MOBILE */
+/* ============================= */
+
+@media (max-width: 360px) {
+
+    .dashboard > div:first-of-type h3 {
+        font-size: 17px;
+    }
+
+    .box {
+        padding: 12px;
+    }
+
+    .box h4 {
+        font-size: 17px;
+    }
+
+    .qty {
+        padding: 10px;
+    }
+
+}

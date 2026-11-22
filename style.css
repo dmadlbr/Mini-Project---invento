@@ -147,3 +147,442 @@ section {
     border-color: rgba(22, 101, 52, 0.12);
 }
 
+
+/* Responsive signin page */
+
+* {
+    box-sizing: border-box;
+}
+
+.head {
+    margin-inline: 20px;
+}
+
+.navs {
+    gap: 25px;
+}
+
+section > div > div {
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+.signinBox,
+.login {
+    width: 100%;
+    max-width: 500px;
+}
+
+.login {
+    height: auto;
+    min-height: 450px;
+    padding: 30px;
+}
+
+.signinBox {
+    min-height: 450px;
+    padding: 30px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .head {
+        margin-inline: 15px;
+    }
+
+    .navs {
+        gap: 15px;
+    }
+
+    section > div > div {
+        gap: 25px;
+    }
+
+    .signinBox,
+    .login {
+        padding: 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .head {
+        height: auto;
+        margin: 10px 15px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .brand h1 {
+        font-size: 25px;
+    }
+
+    .navs {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    section > div > div {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .signinBox {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .signinBox h3 {
+        font-size: 2rem;
+        width: auto;
+    }
+
+    .signinBox h4 {
+        width: auto;
+    }
+
+    .login {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .login button[type="submit"] {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .login h5 {
+        margin-left: 0;
+    }
+}
+
+/* Responsive signup page */
+
+* {
+    box-sizing: border-box;
+}
+
+#signupForm {
+    width: 100%;
+}
+
+#form {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 30px;
+}
+
+#form h1 {
+    font-size: 30px;
+}
+
+#form button {
+    margin-inline: 0;
+    max-width: 100%;
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+    section > div > div {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .signinBox {
+        width: 100%;
+        max-width: 500px;
+        min-height: auto;
+    }
+
+    #signupForm {
+        justify-content: center;
+    }
+
+    #form {
+        margin-bottom: 20px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .head {
+        height: auto;
+        margin: 10px 15px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navs {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+
+    .signinBox,
+    #form {
+        padding: 20px;
+    }
+
+    .signinBox h3 {
+        font-size: 30px;
+        width: auto;
+    }
+
+    .signinBox h4 {
+        width: auto;
+    }
+
+    #form h1 {
+        font-size: 25px;
+    }
+
+    #form button {
+        width: 100%;
+    }
+}
+
+/* landing */
+
+/* Tablet */
+@media (max-width: 1280px) {
+
+    .hero {
+        gap: 20px;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .hero > div {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .hero > img {
+        width: 45%;
+        height: auto;
+    }
+
+    .hero h2,
+    .hero h3,
+    .hero > div > p,
+    .hero ul {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .hero button {
+        margin-left: 0;
+    }
+
+.feature {
+    width: 100%;
+}
+.feature > div {
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.feature > div > div {
+    width: 100%;
+    min-width: 0;
+}
+.about {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding-inline: 40px;
+}
+    .about h1 {
+        font-size: 36px;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .overview {
+        padding: 50px 30px;
+    }
+
+    .overview > div {
+        gap: 30px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* Header */
+    .head {
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        margin: 15px;
+    }
+
+    .navs {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0;
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .hero > div {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero > img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* Feature */
+
+.feature{
+    width: 100%;
+}
+
+.feature > div {
+    width: 100%;
+    grid-template-columns: 1fr !important;
+    margin-left: 0 !important;
+    padding: 25px !important;
+    gap: 30px;
+    box-sizing: border-box;
+}
+    .feature > div > div {
+        width: 100%;
+        min-width: 0;
+    }
+    /* About */
+    .about {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .about h1 {
+        font-size: 32px;
+    }
+
+    .about p {
+        width: 100%;
+    }
+
+    .cards {
+        margin-top: 20px;
+    }
+
+    /* Why Invento */
+    #whyInvento {
+        padding: 40px 20px;
+    }
+
+    #whyInvento h1 {
+        font-size: 32px;
+    }
+
+    #whyInvento p br {
+        display: none;
+    }
+
+    #whyInvento .flex.items-center.justify-center {
+        margin-left: 0;
+        flex-wrap: wrap;
+    }
+
+    /* Overview */
+    .overview {
+        padding: 40px 20px;
+    }
+
+    .overview > div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .overview > div > div {
+        width: 100%;
+    }
+
+    .overview h1 {
+        font-size: 36px;
+    }
+
+    .overview p {
+        width: 100%;
+    }
+
+    .overview .flex.gap-8 {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Small mobile */
+@media (max-width: 480px) {
+
+    .brand h1 {
+        font-size: 25px;
+    }
+
+    .navs {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .about h1,
+    #whyInvento h1,
+    .overview h1 {
+        font-size: 28px;
+    }
+
+    .cards > div {
+        gap: 12px;
+    }
+
+    .overview > div > div:last-child {
+        padding: 20px;
+    }
+
+    footer {
+        padding-inline: 20px;
+    }
+}

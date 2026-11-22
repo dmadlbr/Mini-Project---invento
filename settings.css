@@ -1,0 +1,166 @@
+
+/* settings responsive */
+
+/* Settings responsive */
+
+/* Hide hamburger and overlay by default */
+#menuBtn,
+#sidebarOverlay {
+    display: none;
+}
+
+@media (max-width: 991px) {
+
+    /* Hamburger */
+    #menuBtn {
+        display: block;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* Main layout */
+    .layout {
+        display: block;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        max-width: 85vw;
+        height: 100vh;
+        z-index: 1001;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Overlay */
+    #sidebarOverlay.active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+    }
+
+    /* Main content scrolling */
+    .layout > section.flex-1 {
+        width: 100%;
+        min-width: 0;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* Header */
+    .layout > section.flex-1 > div:first-child {
+        gap: 8px;
+    }
+
+    /* Settings cards */
+    .layout > section.flex-1 > div.bg-white {
+        width: auto;
+        margin: 15px 12px;
+        padding: 16px;
+    }
+
+    /* Card headings */
+    .layout > section.flex-1 h3 {
+        overflow-wrap: break-word;
+    }
+
+    /* Inventory button */
+    #inventoryForm button {
+        width: 100%;
+    }
+
+    /* Profile button */
+    #profileForm button {
+        width: 100%;
+    }
+
+    /* Header icons spacing */
+    .layout > section.flex-1 > div:first-child > div:last-child {
+        gap: 16px;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 25px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+
+    .layout > section.flex-1 > div.bg-white {
+        margin: 12px 8px;
+        padding: 12px;
+    }
+
+    /* Header title */
+    .layout > section.flex-1 h3 {
+        font-size: 20px;
+    }
+
+    /* Header description */
+    .layout > section.flex-1 p {
+        overflow-wrap: break-word;
+    }
+
+    /* Reduce icon spacing */
+    .layout > section.flex-1 > div:first-child > div:last-child {
+        gap: 12px;
+    }
+
+    /* Buttons */
+    #profileForm button,
+    #inventoryForm button {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+@media (max-width: 991px) {
+
+    #notificationBox {
+        position: fixed;
+        top: 75px;
+        right: 10px;
+        left: auto;
+        width: min(340px, calc(100vw - 20px));
+        max-height: 70vh;
+        overflow-y: auto;
+        z-index: 1100;
+    }
+
+    #notificationList {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+
+}
+@media (max-width: 380px) {
+
+    #notificationBox {
+        right: 8px;
+        width: calc(100vw - 16px);
+        padding: 12px;
+    }
+
+    #notificationBox h3 {
+        font-size: 16px;
+    }
+
+    #notificationBox button {
+        font-size: 11px;
+    }
+
+}

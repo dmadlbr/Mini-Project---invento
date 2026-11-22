@@ -7,13 +7,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="settings.css">
 </head>
 <body>
-     <main class="layout">
+     <main class="layout  min-h-screen flex flex-col md:flex-row">
 
-    <section class="sidebar">
+    <section class="sidebar" id="sidebar">
         <div class="brand">
-            <img src="./assets/logo.png" class="h-14">
+            <a href="land.html"><img src="./assets/logo.png" class="h-14"></a>
             <h1 class="text-white">invento<span class="text-orange-300">.</span></h1>
         </div>
 
@@ -54,33 +55,69 @@
 
          <button class="logout" id="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
     </section>
-
+    <div id="sidebarOverlay"></div>
+    
     <section class="flex-1">
-        <div class="flex justify-between items-center p-5 pb-2">
-            <div class="ps-10 leading-5">
-                <h4 class="font-semibold text-gray-400 text-sm">MAKE IT YOURS</h4>
-                <h3 class="font-bold text-[rgb(35,81,64)] text-3xl tracking-widest">Settings</h3>
-                <p class="ps-1 text-[rgb(95,108,104)]">Customize your account and inventory preferences.</p>
-            </div>
+        <div class="flex justify-between items-center gap-3 p-4 sm:p-5 pb-2">
+            <div class="flex items-center gap-3 min-w-0">
+                <button id="menuBtn"
+                type="button"
+                class="md:hidden text-2xl text-[rgb(35,81,64)] shrink-0">
+                <i class="fa-solid fa-bars"></i>
+                </button>
 
-            
-        <div class="flex gap-10 items-center p-5">
-              <div class="relative">
-
-                    <i class="fa-solid fa-bell text-xl text-[rgb(197,150,69)]" id="notifications"></i>
-                        <div id="notificationBox" class="hidden">
-                            <h3> Notifications</h3>
-                            <div id="notificationList">No notifications yet.</div>
-                        </div>
-
+                <div class="ps-0 sm:ps-10 leading-5 min-w-0">
+                    <h4 class="font-semibold text-gray-400 text-sm">MAKE IT YOURS</h4>
+                    <h3 class="font-bold text-[rgb(35,81,64)] text-2xl sm:text-3xl tracking-widest">Settings</h3>
+                    <p class="ps-1 text-[rgb(95,108,104)]">Customize your account and inventory preferences.</p>
                 </div>
+        </div>
+            
+        <div class="flex gap-6 sm:gap-10 items-center p-2 sm:p-5">
+            <!-- notification -->
+            <div class="relative">
+    <button id="notifications" class="relative cursor-pointer">
+        <i class="fa-solid fa-bell text-xl text-[rgb(197,150,69)]"></i>
+
+        <span id="unreadCount"
+            class="absolute -top-2 -right-2 bg-[rgb(197,150,69)] text-white text-xs rounded-full min-w-4 h-4 flex items-center justify-center">
+            0
+        </span>
+    </button>
+
+    <!-- Notification dropdown -->
+    <div id="notificationBox"
+class="hidden absolute right-0 top-full mt-4 w-[min(20rem,calc(100vw-2rem))] bg-white rounded-xl shadow-xl border border-gray-200 z-50 p-4">
+        <div class="flex justify-between items-center gap-2">
+            <h3 class="text-lg font-bold text-[rgb(35,81,64)]">
+                Recent Notifications
+            </h3>
+
+            <button id="markAllRead"
+                class="text-xs text-[rgb(35,81,64)] hover:underline">
+                Mark all as read
+            </button>
+        </div>
+
+        <p id="notificationSummary" class="text-xs text-gray-500 mt-2 mb-3">
+            No unread notifications
+        </p>
+
+        <div id="notificationList">
+            No notifications yet.
+        </div>
+
+    </div>
+</div>
+
+
             <!-- PROFILE ICON -->
             <div class="relative">
                     <button id="profileBtn" class="cursor-pointer">
                         <i class="fa-solid fa-user text-xl text-[rgb(35,81,64)]"></i>
                     </button>
 
-                    <div id="profileDropdown" class="hidden absolute right-0 top-full mt-3 w-64 bg-[rgb(252,252,244)] rounded-xl shadow-xl border border-gray-200 z-50 overflow-hidden">
+                    <div id="profileDropdown" class="hidden absolute right-0 top-full mt-3 w-[min(16rem,calc(100vw-2rem))] bg-[rgb(252,252,244)] rounded-xl shadow-xl border border-gray-200 z-50 overflow-hidden">
 
     <!-- Profile Details -->
                         <div class="p-4 bg-[rgb(35,81,64)]">
@@ -124,7 +161,7 @@
         </div>
 
         <!-- profile settings -->
-        <div class="p-8 my-5 mx-15 bg-white mb-15 rounded-2xl">
+        <div class="p-4 sm:p-6 lg:p-8 my-5 mx-3 sm:mx-6 lg:mx-15 bg-white mb-10 rounded-2xl">
 
             <div class="flex gap-4 items-center mb-6">
 
@@ -133,14 +170,14 @@
                 </div>
 
                 <div>
-                    <h3 class="font-semibold text-[rgb(35,81,64)] text-2xl">Profile Settings</h3>
+                    <h3 class="font-semibold text-[rgb(35,81,64)] text-xl sm:text-2xl">Profile Settings</h3>
                     <p class="text-sm text-gray-500">Manage your personal information.</p>
                 </div>
 
             </div>
 
         <form id="profileForm">
-            <div class="grid grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
             <div class=" flex flex-col">
             <label for="name" class="font-semibold text-[rgb(35,81,64)] text-[16px]">Full Name</label>
             <input type="text" id="name" placeholder="Enter your name" class="w-full border border-gray-200 rounded-lg p-3 mt-1">
@@ -152,7 +189,7 @@
             </div>
        
             </div>
-            <button class="border border-[rgb(35,81,64)] bg-[rgb(35,81,64)] text-white font-semibold hover:scale-95 transition duration-300 p-2 rounded-lg w-50 mt-5" type="submit">Save Profile</button>
+            <button class="border border-[rgb(35,81,64)] bg-[rgb(35,81,64)] text-white font-semibold hover:scale-95 transition duration-300 p-2 rounded-lg w-full sm:w-50 mt-5" type="submit">Save Profile</button>
         </form>
          </div>
 
@@ -184,7 +221,7 @@
 
         <!-- inv preferences -->
 
-      <div class="p-8 my-5 mx-15 bg-white rounded-2xl">
+      <div class="p-4 sm:p-6 lg:p-8 my-5 mx-3 sm:mx-6 lg:mx-15 bg-white rounded-2xl">
 
             <div class="flex gap-4 items-center mb-6">
 
@@ -200,14 +237,14 @@
             </div>
 
         <form id="inventoryForm">
-            <div class="grid grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
             <div class=" flex flex-col">
             <label for="threshold" class="font-semibold text-[rgb(35,81,64)] text-[16px]">Low Stock Threshold</label>
-            <input type="number" id="threshold" placeholder="Eg:25" value="25" class="w-full border border-gray-200 rounded-lg p-3 mt-1" min="1">
+            <input type="number" id="threshold" placeholder="Eg:25"  class="w-full border border-gray-200 rounded-lg p-3 mt-1" min="1" required step="1">
             </div>
 
             <div class=" flex flex-col">
-            <label for="email" class="font-semibold text-[rgb(35,81,64)] text-[16px]">Default Category</label>
+            <label for="cats" class="font-semibold text-[rgb(35,81,64)] text-[16px]">Select Category</label>
                     <select
                         name="categories"
                         id="cats"
@@ -222,19 +259,20 @@
            
             </div>
             </div>
-            <button class="border border-[rgb(35,81,64)] bg-[rgb(35,81,64)] text-white font-semibold hover:scale-95 transition duration-300 p-2 rounded-lg w-80 mt-5" type="submit">Save Inventory Preferences</button>
+            <button class="border border-[rgb(35,81,64)] bg-[rgb(35,81,64)] text-white font-semibold hover:scale-95 transition duration-300 p-2 rounded-lg w-full sm:w-80 mt-5" type="submit">Save Inventory Preferences</button>
         </form>
          </div>
 
         </div>
 
 
-   <footer class="text-center text-gray-500 text-sm mt-13">© 2026 invento. All rights reserved.</footer>
+   <footer class="text-center text-gray-500 text-sm mt-8 sm:mt-13 px-3 pb-4">© 2026 invento. All rights reserved.</footer>
     
 
     </section>
     </main>
 <script src="./settings.js"></script>
+<script src="./auth.js"></script>
 </body>
 
 

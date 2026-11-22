@@ -7,14 +7,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="add.css">
 </head>
 <body>
     
     <main class="layout">
 
-    <section class="sidebar">
+    <section class="sidebar"  id="sidebar">
         <div class="brand">
-            <img src="./assets/logo.png" class="h-14">
+            <a href="land.html"><img src="./assets/logo.png" class="h-14"></a>
             <h1 class="text-white">invento<span class="text-orange-300">.</span></h1>
         </div>
 
@@ -56,11 +57,16 @@
          <button class="logout" id="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
     </section>
 
+    <div id="sidebarOverlay"></div>
 
     <section class="add">
 
     <!-- Header -->
     <div class="flex justify-between items-center p-5 pb-2">
+
+        <button id="menuBtn" type="button">
+            <i class="fa-solid fa-bars"></i>
+    </button>
 
         <div class="ps-10 leading-5">
             <h4 class="font-semibold text-gray-400 text-sm tracking-widest">
@@ -76,16 +82,44 @@
             </p>
         </div>
 
-        <div class="flex gap-10 items-center p-5 pe-10">
-              <div class="relative">
+        <div class="flex gap-10 items-center p-5 ">
+                   <!-- notification -->
+            <div class="relative">
+    <button id="notifications" class="relative cursor-pointer">
+        <i class="fa-solid fa-bell text-xl text-[rgb(197,150,69)]"></i>
 
-                    <i class="fa-solid fa-bell text-xl text-[rgb(197,150,69)]" id="notifications"></i>
-                        <div id="notificationBox" class="hidden">
-                            <h3> Notifications</h3>
-                            <div id="notificationList">No notifications yet.</div>
-                        </div>
+        <span id="unreadCount"
+            class="absolute -top-2 -right-2 bg-[rgb(197,150,69)] text-white text-xs rounded-full min-w-4 h-4 flex items-center justify-center">
+            0
+        </span>
+    </button>
 
-                </div>
+    <!-- Notification dropdown -->
+    <div id="notificationBox"
+        class="hidden absolute right-0 top-full mt-4 w-[calc(100vw-2rem)] max-w-[320px] bg-white rounded-xl shadow-xl border border-gray-200 z-50 p-4 box-border">
+
+        <div class="flex justify-between items-center gap-2">
+            <h3 class="text-lg font-bold text-[rgb(35,81,64)]">
+                Recent Notifications
+            </h3>
+
+            <button id="markAllRead"
+                class="text-xs text-[rgb(35,81,64)] hover:underline">
+                Mark all as read
+            </button>
+        </div>
+
+        <p id="notificationSummary" class="text-xs text-gray-500 mt-2 mb-3">
+            No unread notifications
+        </p>
+
+        <div id="notificationList">
+            No notifications yet.
+        </div>
+
+    </div>
+</div>
+
                 
                         <!-- PROFILE ICON -->
             <div class="relative">

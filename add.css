@@ -1,0 +1,186 @@
+
+/* Add Product Responsive */
+
+/* Hamburger hidden on desktop */
+#menuBtn,
+#sidebarOverlay {
+    display: none;
+}
+
+@media (max-width: 991px) {
+
+    /* Main layout */
+    .layout {
+        display: block;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Hamburger */
+    #menuBtn {
+        display: block;
+        background: none;
+        border: none;
+        color: rgb(35, 81, 64);
+        font-size: 23px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        max-width: 85vw;
+        height: 100vh;
+        z-index: 1001;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Overlay */
+    #sidebarOverlay.active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+    }
+
+    /* Add page */
+    .layout > section.add {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* Header */
+    .add > div:first-child {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .add > div:first-child > div:first-child > div {
+        padding-left: 0;
+    }
+
+    .add h3 {
+        font-size: 23px;
+    }
+
+    /* Header icons */
+    .add > div:first-child > div:last-child {
+        gap: 18px;
+        padding: 8px;
+        flex-shrink: 0;
+    }
+
+    /* Form box */
+    .add > div.bg-white {
+        width: calc(100% - 30px);
+        max-width: none;
+        margin: 15px auto;
+        padding: 18px;
+    }
+
+    /* Two columns become one */
+    .add .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Inputs */
+    .add input,
+    .add select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Form buttons */
+    .add form > div.flex.justify-end {
+        flex-wrap: wrap;
+    }
+
+    /* Notification dropdown */
+    #notificationBox {
+        position: fixed;
+        top: 75px;
+        right: 10px;
+        width: min(340px, calc(100vw - 20px));
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    #notificationList {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+
+    /* Profile dropdown */
+    #profileDropdown {
+        width: min(256px, calc(100vw - 20px));
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .add > div:first-child {
+        padding: 10px;
+    }
+
+    .add h3 {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    .add h4 {
+        font-size: 11px;
+    }
+
+    .add p {
+        font-size: 12px;
+    }
+
+    .add > div:first-child > div:last-child {
+        gap: 12px;
+    }
+
+    .add > div.bg-white {
+        width: calc(100% - 20px);
+        padding: 13px;
+    }
+
+    .add input,
+    .add select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Buttons */
+    .add form > div.flex.justify-end {
+        flex-direction: column;
+    }
+
+    .add form > div.flex.justify-end button {
+        width: 100%;
+    }
+
+    /* Product suggestions */
+    #productSuggestions {
+        max-height: 180px;
+    }
+
+    /* Notification */
+    #notificationBox {
+        right: 8px;
+        width: calc(100vw - 16px);
+    }
+}

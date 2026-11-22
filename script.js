@@ -46,4 +46,3 @@ function addNotification(message){
 
     localStorage.setItem(notificationKey, JSON.stringify(notifications));
 }
-

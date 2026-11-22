@@ -1,0 +1,353 @@
+/* 
+.layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(245, 243, 235);
+    margin: 0;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:30px;
+}
+
+.brand h1{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing: 2px;
+}
+
+.sidebar{
+    width: 280px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(35,81,64);
+    border-right: none;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.sidelist{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-top:10px;
+}
+   
+.sidelist button{
+    border: 1px solid transparent;
+    width: 200px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    text-align: left;
+    transition: 200ms;
+    background-color: transparent;
+    color: white;
+}
+
+.sidelist button i {
+    width: 25px;
+    margin-right:12px;
+    
+}
+
+.sidelist button:hover{
+    border: 1px solid transparent;
+    background-color: rgb(47,98,78);
+    border-radius: 10px;
+}
+
+.helpBox{
+    width:210px;
+    padding:16px;
+    margin-top:auto;
+    margin-bottom:15px;
+    border:1px solid rgb(55,105,85);
+    border-radius:12px;
+    background-color:rgb(47,98,78);
+    color:white;
+}
+
+.helpBox h4{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.helpBox p{
+    font-size: 11px;
+    color: rgb(210,225,218);
+}
+
+.logout{
+    margin-bottom:40px;
+    color:rgb(225,235,230);
+    background:transparent;
+    border:none;
+    font-size:14px;
+}
+.logout:hover{
+    scale: 1.05;
+    color: red;
+    
+
+}
+.pagination button {
+    color: rgb(35,81,64);
+}
+
+.pagination .prev,
+.pagination .next,.lowPage .prev,
+.lowPage .next  {
+    color: rgb(170,180,175);
+    cursor: not-allowed;
+} */
+
+/* Hamburger button */
+.menuBtn {
+    display: none;
+    color: rgb(35, 81, 64);
+    border: none;
+    border-radius: 8px;
+    /* padding: 10px 14px; */
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+
+    .layout {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .menuBtn {
+        display: block;
+        margin: 15px;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        max-width: 85vw;
+        height: 100vh;
+        z-index: 1003;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    #sidebarOverlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1002;
+    }
+
+    #sidebarOverlay.active {
+        display: block;
+    }
+
+    .lowstocks {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding-bottom: 20px;
+    }
+
+    /* Header */
+    .lowstocks > .flex.justify-between.items-center {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .lowstocks > .flex.justify-between.items-center > div:first-child {
+        padding-left: 0;
+    }
+
+    .lowstocks > .flex.justify-between.items-center > div:last-child {
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    /* Summary cards */
+    .lowBox {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+        margin: 15px 20px;
+    }
+
+    .lowBox > div {
+        min-width: 0;
+    }
+
+    /* Search and filters */
+    .lowstocks > .flex.items-center.gap-15.p-5 {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 15px 20px;
+        padding: 15px;
+    }
+
+    .lowstocks > .flex.items-center.gap-15.p-5 > input {
+        width: 100%;
+    }
+
+    .lowstocks > .flex.items-center.gap-15.p-5 > div {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .lowstocks select {
+        flex: 1;
+        min-width: 140px;
+        width: auto;
+    }
+
+    .lowPdts {
+        margin: 15px 20px;
+    }
+
+.lowPagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 260px;
+    }
+
+    .lowstocks > .flex.justify-between.items-center {
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .lowstocks > .flex.justify-between.items-center > div:first-child h3 {
+        font-size: 25px;
+    }
+
+    .lowstocks > .flex.justify-between.items-center > div:first-child p {
+        font-size: 13px;
+    }
+
+    .lowstocks > .flex.justify-between.items-center > div:last-child {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    /* Summary cards */
+    .lowBox {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 12px;
+    }
+
+    .lowBox > div {
+        padding: 15px;
+    }
+
+    /* Search and filters */
+    .lowstocks > .flex.items-center.gap-15.p-5 {
+        margin: 12px;
+        padding: 12px;
+    }
+
+    .lowstocks > .flex.items-center.gap-15.p-5 > div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .lowstocks select {
+        width: 100%;
+    }
+
+    .lowPdts {
+        margin: 12px;
+        overflow-x:auto ;
+    }
+
+    .lowPagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin: 15px 10px;
+    }
+
+    /* Notification and profile dropdowns */
+    #notificationBox,
+    #profileDropdown {
+        position: fixed;
+        top: 75px;
+        right: 10px;
+        left: auto;
+        width: min(320px, calc(100vw - 20px));
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
+/* Fix Low Stock page layout */
+
+* {
+    box-sizing: border-box;
+}
+
+.lowstocks {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    overflow-x: hidden;
+}
+
+.lowBox {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 15px 30px;
+    padding: 20px;
+}
+
+.lowPdts {
+    width: auto;
+    margin: 0 30px;
+    overflow-x: auto;
+}
+
+.lowPagination {
+    position: static;
+    justify-content: center;
+    margin: 20px;
+}
